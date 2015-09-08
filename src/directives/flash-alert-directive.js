@@ -19,6 +19,7 @@
                 $scope.flash = {};
 
                 $scope.hide = function () {
+                    $scope.flash.visible = false;
                     removeAlertClasses();
                     if (!isBlank(attr.activeClass)) {
                         element.removeClass(attr.activeClass);
@@ -42,6 +43,7 @@
                         $timeout.cancel(timeoutHandle);
                     }
 
+                    $scope.flash.visible = true;
                     $scope.flash.type = type;
                     $scope.flash.message = message;
                     removeAlertClasses();
